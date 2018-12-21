@@ -1,0 +1,77 @@
+<html>
+<head>
+<title>Fritz Cam Switch</title>
+<style type="text/css">
+body {
+	background-color:#232323;
+}
+	#header h1 {color:#000;background-color:9d9d9d;}
+</style>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+
+
+function isPageHidden(){
+     return document.hidden || document.msHidden || document.webkitHidden || document.mozHidden;
+}
+function logStatus() {
+	console.log(isPageHidden() ? 'page is hidden; I will not load new images' : 'page is visible; I will try to load new images');
+}
+
+if( window.location.search.substring(1) == 'potsdam' )
+{
+	var imgSrc = "https://evo-data.rbb-online.de/frz/webcam/image-frz.jpg";
+	var interval = 2000;
+	var heading = 'Live aus Potsdam (Bild wird gleich aktualisiert)';
+}
+else
+{
+	var imgSrc = "https://evo-data.rbb-online.de/frz/studiokreuzberg/fraeuleinfritz.jpg";
+	var interval = 4000;
+	var heading = 'Live aus Kreuzberg (Bild wird gleich aktualisiert)';
+}
+
+var newImage = new Image();
+newImage.src = imgSrc;
+var timeStamp = 0;
+
+jQuery(window).on('load',function() {
+	console.log('img-tag is loaded');
+
+	jQuery('#webcam_img').attr("src", imgSrc);
+	jQuery('#webcam_img').attr("alt", "Live aus dem FritzStudio in Pdm");
+	jQuery('#header h1').text(heading);
+	jQuery('#header').fadeOut(interval*2, "linear");
+  
+
+	setInterval(updateImage, interval);
+});
+
+
+function updateImage()
+{
+	if(newImage.complete && !!!isPageHidden()) {
+		document.getElementById("webcam_img").src = newImage.src;
+		newImage = new Image();
+		timeStamp = new Date().getTime();
+		newImage.src = imgSrc + '?ts=' + timeStamp;
+	}
+	logStatus();
+}
+
+//setInterval(updateImage, interval);
+
+
+
+
+
+</script>
+</head>
+<body>
+	<div id="header" style="position:absolute;top:0px;z-index:100;"><h1></h1></div>
+	<div id="content">
+	<img src="" alt="" style="width:100%; height:auto;" id="webcam_img">
+	</div>
+	<div id="footer"></div>
+</body>
+</html>

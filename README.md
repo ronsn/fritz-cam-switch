@@ -6,7 +6,7 @@
 
 
 
-![alt text][screenshot]
+![This is a screenshot how it looks like][screenshot]
 
 
 

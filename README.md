@@ -15,7 +15,11 @@ Einfach das [ZIP-Archiv] hier herunterladen und entpacken und anschließend im V
 
 Have Fun :)
 
+[Fragen, Kommentare und Anmerkungen können hier gestellt werden]
+
+
+
 [Fritz-Studiocam]: https://www.fritz.de/sehen-und-hoeren/studiocam/
 [screenshot]: https://github.com/ronsn/fritz-cam-switch/raw/master/src/img/fritz_cam_switch_screenshot.png "Screenshoot"
 [ZIP-Archiv]: https://github.com/ronsn/fritz-cam-switch/archive/master.zip
-
+[Fragen, Kommentare und Anmerkungen können hier gestellt werden]: https://github.com/ronsn/fritz-cam-switch/issues/1

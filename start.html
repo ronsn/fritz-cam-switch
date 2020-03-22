@@ -4,26 +4,38 @@
 <title>Fritz Cam Switch</title>
 <style type="text/css">
 body {
+	background: url('./src/img/bg/bg_konfetti_all.png');
 	background-color:#232323;
 }
+#main {
+	margin: auto;
+	width: 50%;
+}
+#header {
+	min-width:920px;
+}
 button.play {
-	min-width:400px;
+	min-width:450px;
 	padding: 10px;
 	margin: 5px;
 	padding-left:50px;
+	font-family:"Interstate",Tahoma,Arial,sans-serif;
 	font-size: 1.3em;
-	background: url('./src/img/play_button_r1.png');
+	font-weight:bolder;
+	background: url('./src/img/play_button_r2.png');
 	background-color: #fee10b;
 	background-repeat: no-repeat;
 	color:#000;
 }
 button.popup {
-	min-width:400px;
+	min-width:450px;
 	padding: 10px;
 	margin: 5px;
 	padding-left:70px;
+	font-family:"Interstate",Tahoma,Arial,sans-serif;
 	font-size: 1.3em;
-	background: url('./src/img/play_popup_button_r1.png');
+	font-weight:bolder;
+	background: url('./src/img/play_popup_button_r2.png');
 	background-color: #fee10b;
 	background-repeat: no-repeat;
 	color:#000;
@@ -116,14 +128,16 @@ jQuery(window).on('ready',function() {
 </script>
 </head>
 <body>
-	<div id="header">
-		<button class="play" id="inline_ptsdm">Zeige Potsdam</button><button class="popup" id="popup_ptsdm">Potsdam (Popup)</button><br />
-		<button class="play" id="inline_krzbrg">Zeige Kreuzberg</button><button class="popup" id="popup_krzbrg">Kreuzberg (Popup)</button>
+	<div id="main">
+		<div id="header">
+			<button class="play" id="inline_ptsdm">ZEIGE POTSDAM</button><button class="popup" id="popup_ptsdm">POTSDAM (POPUP)</button><br />
+			<button class="play" id="inline_krzbrg">ZEIGE KREUZBERG</button><button class="popup" id="popup_krzbrg">KREUZBERG (POPUP)</button>
+		</div>
+		<div id="content">
+			<img src="" alt="" style="width:924px; height:auto;" id="webcam_img">
+		</div>
+		<div id="footer"></div>
+		<script>//setInterval(updateImage, interval);</script>
 	</div>
-	<div id="content">
-		<img src="" alt="" style="width:924px; height:auto;" id="webcam_img">
-	</div>
-	<div id="footer"></div>
-	<script>//setInterval(updateImage, interval);</script>
 </body>
 </html>

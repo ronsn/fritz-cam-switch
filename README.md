@@ -2,7 +2,7 @@
 
 ## Zeigt die [Fritz-Studiocam] nicht das richtige Studio, aber du willst trotzdem die Gäste, oder deine/n Lieblingsmoderator/in sehen? Dann kannst du jetzt selbst die Cam auswählen!
 
-**Völlig werbefrei. Völlig Kostenlos. Völlig frei** *(mach damit, was du willst!)* **. Keine Installation nötig. Kein Müll!**
+**Kostenlos. Ohne Werbung. Open-Source und damit völlig frei** *(mach damit, was du willst!)* **. Keine Installation nötig. Kein Müll!**
 
 
 

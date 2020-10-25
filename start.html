@@ -4,123 +4,135 @@
 <title>Fritz Cam Switch</title>
 <style type="text/css">
 body {
-	background: url('./src/img/bg/bg_konfetti_all.png');
-	background-color:#232323;
+    background: url('./src/img/bg/bg_yellow_inverted_f.png');
+    background-repeat: no-repeat;
+    background-color:#ffffff;
+    background-size:100%;
 }
 #main {
-	margin: auto;
-	width: 50%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 #header {
-	min-width:920px;
+    min-width:920px;
+}
+button {
+    border-left: 2px solid #000000;
+    border-top: 2px solid #000000;
+    border-right:5px solid #000000;
+    border-bottom:5px solid #000000;
+    background-color: #ffffff;
 }
 button.play {
-	min-width:450px;
-	padding: 10px;
-	margin: 5px;
-	padding-left:50px;
-	font-family:"Interstate",Tahoma,Arial,sans-serif;
-	font-size: 1.3em;
-	font-weight:bolder;
-	background: url('./src/img/play_button_r2.png');
-	background-color: #fee10b;
-	background-repeat: no-repeat;
-	color:#000;
+    min-width:450px;
+    padding: 10px;
+    margin: 5px;
+    padding-left:50px;
+    font-family:"Interstate",Tahoma,Arial,sans-serif;
+    font-size: 1.3em;
+    font-weight:bolder;
+    background: url('./src/img/play_button_r3.png');
+    background-color: #fff;
+    background-repeat: no-repeat;
+    color:#000;
 }
 button.popup {
-	min-width:450px;
-	padding: 10px;
-	margin: 5px;
-	padding-left:70px;
-	font-family:"Interstate",Tahoma,Arial,sans-serif;
-	font-size: 1.3em;
-	font-weight:bolder;
-	background: url('./src/img/play_popup_button_r2.png');
-	background-color: #fee10b;
-	background-repeat: no-repeat;
-	color:#000;
+    min-width:450px;
+    padding: 10px;
+    margin: 5px;
+    padding-left:70px;
+    font-family:"Interstate",Tahoma,Arial,sans-serif;
+    font-size: 1.3em;
+    font-weight:bolder;
+    background: url('./src/img/play_popup_button_r3.png');
+    background-color: #ffff;
+    background-repeat: no-repeat;
+    color:#000;
 }
 </style>
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script type="text/javascript">
-	var currentCam = 'potsdam';
-	var timeStamp = 0;
-	var newImage = new Image();
-	var imgSrc = 'https://evo-data.rbb-online.de/frz/webcam/image-frz.jpg';
-	var interval = 2000;
-	var heading  = 'Live aus Potsdam';
-	
-	function openPopupWindow(studio) {
-		var popupWindow = window.open("./src/pages/popup.html?" + studio , "Webcam-Popup", "width=640,height=480,left=100,top=200");
-		popupWindow.focus();
-		popupWindow.blur();
-	}
-	
-	function switchCamTo(studio) {
-		currentCam = studio;
-		if( currentCam == 'potsdam' )
-		{
-			imgSrc = "https://evo-data.rbb-online.de/frz/webcam/image-frz.jpg";
-			interval = 2000;
-			heading = 'Live aus Potsdam';
-		}
-		else
-		{
-			imgSrc = "https://evo-data.rbb-online.de/frz/studiokreuzberg/fraeuleinfritz.jpg";
-			interval = 4000;
-			heading = 'Live aus Kreuzberg';
-		}
-		newImage.src = imgSrc;
-	}
-	
-	function isPageHidden(){
-		return document.hidden || document.msHidden || document.webkitHidden || document.mozHidden;
-	}
-	function logStatus() {
-		console.log(isPageHidden() ? 'page is hidden; I will not load new images' : 'page is visible; I will try to load new images');
-	}
-	
-	function updateImage()
-	{
-		if(newImage.complete && !!!isPageHidden()) {
-			document.getElementById("webcam_img").src = newImage.src;
-			jQuery('#webcam_img').attr("alt", heading);
-			newImage = new Image();
-			timeStamp = new Date().getTime();
-			newImage.src = imgSrc + '?ts=' + timeStamp;
-		}
-		logStatus();
-	}
-	
+    var currentCam = 'potsdam';
+    var timeStamp = 0;
+    var newImage = new Image();
+    var imgSrc = 'https://evo-data.rbb-online.de/frz/webcam/image-frz.jpg';
+    var interval = 2000;
+    var heading  = 'Live aus Potsdam';
+    
+    function openPopupWindow(studio) {
+        var popupWindow = window.open("./src/pages/popup.html?" + studio , "Webcam-Popup", "width=640,height=480,left=100,top=200");
+        popupWindow.focus();
+        popupWindow.blur();
+    }
+    
+    function switchCamTo(studio) {
+        currentCam = studio;
+        if( currentCam == 'potsdam' )
+        {
+            imgSrc = "https://evo-data.rbb-online.de/frz/webcam/image-frz.jpg";
+            interval = 2000;
+            heading = 'Live aus Potsdam';
+        }
+        else
+        {
+            imgSrc = "https://evo-data.rbb-online.de/frz/studiokreuzberg/fraeuleinfritz.jpg";
+            interval = 4000;
+            heading = 'Live aus Kreuzberg';
+        }
+        newImage.src = imgSrc;
+    }
+    
+    function isPageHidden(){
+        return document.hidden || document.msHidden || document.webkitHidden || document.mozHidden;
+    }
+    function logStatus() {
+        console.log(isPageHidden() ? 'page is hidden; I will not load new images' : 'page is visible; I will try to load new images');
+    }
+    
+    function updateImage()
+    {
+        if(newImage.complete && !!!isPageHidden()) {
+            document.getElementById("webcam_img").src = newImage.src;
+            jQuery('#webcam_img').attr("alt", heading);
+            newImage = new Image();
+            timeStamp = new Date().getTime();
+            newImage.src = imgSrc + '?ts=' + timeStamp;
+        }
+        logStatus();
+    }
+    
 </script>
 <script type="text/javascript">
 jQuery(window).on('ready',function() {
-	
+    
 
-	var btn_ptsdm = document.getElementById('popup_ptsdm')
-	btn_ptsdm.addEventListener('click', function(){openPopupWindow('potsdam');});
-	
-	var btn_krzbrg = document.getElementById('popup_krzbrg')
-	btn_krzbrg.addEventListener('click', function(){openPopupWindow('kreuzberg');});
-	
-	var btn_inline_ptsdm = document.getElementById('inline_ptsdm')
-	btn_inline_ptsdm.addEventListener('click', function(){switchCamTo('potsdam');});
-	
-	var btn_inline_krzbrg = document.getElementById('inline_krzbrg')
-	btn_inline_krzbrg.addEventListener('click', function(){switchCamTo('kreuzberg');});
-
-
-	
-	newImage.src = imgSrc;
-	timeStamp = new Date().getTime();;
+    var btn_ptsdm = document.getElementById('popup_ptsdm')
+    btn_ptsdm.addEventListener('click', function(){openPopupWindow('potsdam');});
+    
+    var btn_krzbrg = document.getElementById('popup_krzbrg')
+    btn_krzbrg.addEventListener('click', function(){openPopupWindow('kreuzberg');});
+    
+    var btn_inline_ptsdm = document.getElementById('inline_ptsdm')
+    btn_inline_ptsdm.addEventListener('click', function(){switchCamTo('potsdam');});
+    
+    var btn_inline_krzbrg = document.getElementById('inline_krzbrg')
+    btn_inline_krzbrg.addEventListener('click', function(){switchCamTo('kreuzberg');});
 
 
-	console.log('img-tag is loaded');
+    
+    newImage.src = imgSrc;
+    timeStamp = new Date().getTime();;
 
-	jQuery('#webcam_img').attr("src", imgSrc+'?ts='+timeStamp);
-	jQuery('#webcam_img').attr("alt", heading);
 
-	setInterval(updateImage, interval);
+    console.log('img-tag is loaded');
+
+    jQuery('#webcam_img').attr("src", imgSrc+'?ts='+timeStamp);
+    jQuery('#webcam_img').attr("alt", heading);
+
+    setInterval(updateImage, interval);
 
 
 
@@ -128,16 +140,16 @@ jQuery(window).on('ready',function() {
 </script>
 </head>
 <body>
-	<div id="main">
-		<div id="header">
-			<button class="play" id="inline_ptsdm">ZEIGE POTSDAM</button><button class="popup" id="popup_ptsdm">POTSDAM (POPUP)</button><br />
-			<button class="play" id="inline_krzbrg">ZEIGE KREUZBERG</button><button class="popup" id="popup_krzbrg">KREUZBERG (POPUP)</button>
-		</div>
-		<div id="content">
-			<img src="" alt="" style="width:924px; height:auto;" id="webcam_img">
-		</div>
-		<div id="footer"></div>
-		<script>//setInterval(updateImage, interval);</script>
-	</div>
+    <div id="main">
+        <div id="header">
+            <button class="play" id="inline_ptsdm">ZEIGE POTSDAM</button><button class="popup" id="popup_ptsdm">POTSDAM (POPUP)</button><br />
+            <button class="play" id="inline_krzbrg">ZEIGE KREUZBERG</button><button class="popup" id="popup_krzbrg">KREUZBERG (POPUP)</button>
+        </div>
+        <div id="content">
+            <img src="" alt="" style="width:924px; height:auto;" id="webcam_img">
+        </div>
+        <div id="footer"></div>
+        <script>//setInterval(updateImage, interval);</script>
+    </div>
 </body>
 </html>

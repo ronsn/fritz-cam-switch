@@ -2,6 +2,7 @@
 <head>
 <meta charset="utf-8" />
 <title>Fritz Cam Switch</title>
+<link rel="shortcut icon" href="./src/img/bg/ficon_yellow_inverted.ico" />
 <style type="text/css">
 body {
     background: url('./src/img/bg/bg_yellow_inverted_f.png');
@@ -52,6 +53,12 @@ button.popup {
     background-repeat: no-repeat;
     color:#000;
 }
+img#webcam_img {
+    border-left: 1px solid #000;
+    border-top: 1px solid #000;
+    border-right:5px solid #000;
+    border-bottom:5px solid #000;
+}
 </style>
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script type="text/javascript">
@@ -61,13 +68,13 @@ button.popup {
     var imgSrc = 'https://evo-data.rbb-online.de/frz/webcam/image-frz.jpg';
     var interval = 2000;
     var heading  = 'Live aus Potsdam';
-    
+
     function openPopupWindow(studio) {
         var popupWindow = window.open("./src/pages/popup.html?" + studio , "Webcam-Popup", "width=640,height=480,left=100,top=200");
         popupWindow.focus();
         popupWindow.blur();
     }
-    
+
     function switchCamTo(studio) {
         currentCam = studio;
         if( currentCam == 'potsdam' )
@@ -84,14 +91,14 @@ button.popup {
         }
         newImage.src = imgSrc;
     }
-    
+
     function isPageHidden(){
         return document.hidden || document.msHidden || document.webkitHidden || document.mozHidden;
     }
     function logStatus() {
         console.log(isPageHidden() ? 'page is hidden; I will not load new images' : 'page is visible; I will try to load new images');
     }
-    
+
     function updateImage()
     {
         if(newImage.complete && !!!isPageHidden()) {
@@ -103,26 +110,26 @@ button.popup {
         }
         logStatus();
     }
-    
+
 </script>
 <script type="text/javascript">
 jQuery(window).on('ready',function() {
-    
+
 
     var btn_ptsdm = document.getElementById('popup_ptsdm')
     btn_ptsdm.addEventListener('click', function(){openPopupWindow('potsdam');});
-    
+
     var btn_krzbrg = document.getElementById('popup_krzbrg')
     btn_krzbrg.addEventListener('click', function(){openPopupWindow('kreuzberg');});
-    
+
     var btn_inline_ptsdm = document.getElementById('inline_ptsdm')
     btn_inline_ptsdm.addEventListener('click', function(){switchCamTo('potsdam');});
-    
+
     var btn_inline_krzbrg = document.getElementById('inline_krzbrg')
     btn_inline_krzbrg.addEventListener('click', function(){switchCamTo('kreuzberg');});
 
 
-    
+
     newImage.src = imgSrc;
     timeStamp = new Date().getTime();;
 

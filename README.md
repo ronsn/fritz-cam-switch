@@ -2,7 +2,18 @@
 
 ## Zeigt die [Fritz-Studiocam] nicht das richtige Studio, aber du willst trotzdem die Gäste, oder deine/n Lieblingsmoderator/in sehen? Dann kannst du jetzt selbst die Cam auswählen!
 
-**Kostenlos. Ohne Werbung. Open-Source und damit völlig frei** *(mach damit, was du willst!)* **. Keine Installation nötig. Kein Müll!**
+Puhh, diese Software wurde aus Solidarität freiwillig entwickelt und dabei wurde auf folgendes geachtet:
+
+- **kostenlos.**
+- **ohne Werbung.**
+- **KEINE Datenkrake**
+- **keine Installation**
+- **von und für die Community**
+- **Open-Source und damit völlig frei für jede/n** *(das heißt: DU machst damit, was DU willst!)*
+- *…denn diese Software gehört jetzt DIR und DU entscheidest selbst!*
+- **ach egal, ich hab jetzt kein Bock mehr auf diesen Pseudo-Marketing-Kram :D Ist ja eh kostenlos :D** 
+
+Glaubst du nicht? Dann schau doch selbst im [Quellcode](https://github.com/ronsn/fritz-cam-switch) nach! Und wenn du Verbesserungsvorschläge hast – egal ob Text, Aussehen, oder Funktion – dann gib mal bitte Bescheid! Ansonsten kommt hier jetzt nur noch ein **Bild und** darunter die **Anleitung** zur Nutzung:
 
 
 

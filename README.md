@@ -1,5 +1,12 @@
 # Der Fritz-Studiocam-Switcher
 
+>:warning: **Hinweis:**
+>
+>Am Freitag, der 12. November 2021, fand die letzte Sendung im Studio „Fräulein Fritz“ in Berlin-Kreuzberg statt und am Montag darauf (15.11.2021) begannen die Abbauarbeiten aller Geräte im „Fräulein Fritz“. Die Webcam dieses Studios sendete an diesem Tag ihr letztes Bild, wodurch ab diesem Zeitpunkt die Webcam im Studio Potsdam die einzige ist, die noch Bilder sendet. Aus diesem Grund ist auch ein Wechsel zwischen Webcams nicht mehr möglich und der „_Fritz-Studiocam-Switcher_“ ist dadurch unnötig geworden und wird auch nicht mehr mit Updates versorgt. Vielleicht wird in Zukunft ein weiteres Studio bezogen das eine Webcam hat. Wer weiß?
+>
+>Bis dahin bedanke ich mich bei allen Nutzer:innen, die dieses Tool nützlich fanden. Vielen Dank und R.I.P. „Fräulein Fritz“.
+
+
 ## Zeigt die [Fritz-Studiocam] nicht das richtige Studio, aber du willst trotzdem die Gäste, oder deine/n Lieblingsmoderator/in sehen? Dann kannst du jetzt selbst die Cam auswählen!
 
 Puhh, diese Software wurde aus Solidarität freiwillig entwickelt und dabei wurde auf folgendes geachtet:
